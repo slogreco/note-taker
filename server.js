@@ -1,4 +1,5 @@
 const express = require("express");
+const fs = require("fs");
 const app = express();
 
 
@@ -9,8 +10,8 @@ app.use(express.json());
 
 
 
-require("./routes/apiRoutes");
-require("./routes/htmlRoutes");
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 
 app.listen(PORT, function () {
