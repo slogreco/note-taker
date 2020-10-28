@@ -16,7 +16,7 @@ module.exports = function (app) {
         fs.readFile("./db/db.json", "utf8", (err, data) => {
             let newNote = JSON.parse(data);
             newNote.push(req.body);
-console.log(data)
+            console.log(data)
             fs.writeFile('./db/db.json', JSON.stringify(newNote), (err) => {
                 if (err) throw err;
                 res.json(req.body);
